@@ -11,9 +11,29 @@ header {
     padding: 20px 0;
     text-align: center;
 }
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
 
 h1 {
     margin: 0;
+    padding: 10px 0;
 }
 
 main {
@@ -28,13 +48,17 @@ main {
 }
 
 .website-card {
-    background-color: #fff;
+    background-color: #f0f7ff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     width: 200px;
+    transition: box-shadow 0.3s ease;
+}
+.website-card:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .website-card img {
@@ -66,4 +90,12 @@ button {
 
 button:hover {
     background-color: #333;
+}
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
 }
