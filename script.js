@@ -15,3 +15,7 @@ document.getElementById('scrollToTop').addEventListener('click', function() {
 document.getElementById('scrollToBottom').addEventListener('click', function() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 });
+//script for the menu
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('active');
+});

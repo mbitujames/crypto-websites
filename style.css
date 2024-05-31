@@ -7,15 +7,17 @@ body, h1, h2, p, a, ul, li, img {
     vertical-align: baseline;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+    background-color: #F0F0F0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 header {
-    background-color: #000;
+    position: relative;
+    z-index: 2;
+    background-color: #0E1514;
     color: #fff;
     padding: 15px 0;
     text-align: center;
@@ -31,8 +33,30 @@ nav ul {
     padding-bottom: 10px;
 }
 
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none; /* Initially hide the toggle for larger screens */
+}
+
 section {
-    margin-bottom: 20px 0;
+    margin-bottom: 20px;
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -43,30 +67,20 @@ section {
 section:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-/* Styling for h3 headings */
-h3 {
-    text-align: center;
-    font-size: 28px;
-    color: brown;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #f1f1f1;
-    padding-bottom: 10px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
 
 h1 {
     margin: 0;
     padding: 10px 0;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-align: center;
+    font-size: 28px;
+    color: brown;
+    margin: 15px 0 10px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 10px;
 }
 
 main {
@@ -92,14 +106,16 @@ main {
     width: 200px;
     transition: box-shadow 0.3s ease;
 }
-.website-card:hover{
+
+.website-card:hover {
+    color: red;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .website-card img {
-    width: 56px;  /* Set the width to 56px */
-    height: 56px; /* Set the height to 56px */
-    object-fit: cover; /* Ensure the image covers the area without stretching */
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
     margin-bottom: 10px;
 }
 
@@ -115,8 +131,8 @@ main {
 
 .button {
     display: inline-block;
-    background-color: #000;
-    color: #fff;
+    background-color: #fa5b3d;
+    color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -130,15 +146,21 @@ main {
 .button:hover {
     background-color: #333;
 }
+
 footer {
-    background-color: #000;
+    background-color: #0E1514;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     position: relative;
     width: 100%;
     margin-top: 20px;
 }
+
+footer p {
+    margin: 0;
+}
+
 .fa-solid, .fa-brands {
     margin-right: 5px;
 }
@@ -150,7 +172,7 @@ footer {
     right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .scroll-button {
@@ -169,5 +191,33 @@ footer {
 }
 
 .scroll-button:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(236, 5, 5, 0.6);
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0E1514;
+        width: 200px;
+        border: 1px solid #333;
+        border-radius: 8px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .scroll-buttons {
+        bottom: 5px;
+        right: 5px;
+    }
 }
