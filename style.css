@@ -1,3 +1,12 @@
+/* Reset some basic elements to provide a consistent base */
+body, h1, h2, p, a, ul, li, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,6 +20,7 @@ header {
     padding: 15px 0;
     text-align: center;
 }
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -18,6 +28,29 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
+    padding-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px 0;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Styling for h3 headings */
+h3 {
+    text-align: center;
+    font-size: 28px;
+    color: brown;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f1f1;
     padding-bottom: 10px;
 }
 
@@ -91,6 +124,7 @@ main {
     margin-top: 10px;
     font-size: 1em;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
@@ -103,4 +137,37 @@ footer {
     padding: 10px 0;
     position: relative;
     width: 100%;
+    margin-top: 20px;
+}
+.fa-solid, .fa-brands {
+    margin-right: 5px;
+}
+
+/* Scroll buttons styles */
+.scroll-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.scroll-button {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
 }
